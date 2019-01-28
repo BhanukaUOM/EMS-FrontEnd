@@ -1,0 +1,112 @@
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 600px; background-image: url(../assets/img/theme/profile-cover.jpg); background-size: cover; background-position: center top;">
+  <!-- Mask -->
+  <span class="mask bg-gradient-default opacity-8"></span>
+  <!-- Header container -->
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
+      <div class="card card-profile shadow">
+        <div class="row justify-content-center">
+          <div class="col-lg-3 order-lg-2">
+            <div class="card-profile-image">
+              <a href="#">
+                <img src="{{user.avatar_url}}" class="rounded-circle">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
+        </div>
+        <div class="card-body pt-0 pt-md-4">
+          <div class="text-center">
+            <h3>
+              {{user.name}}<span class="font-weight-light"></span>
+            </h3>
+            <div class="h5 font-weight-300">
+              <i class="ni location_pin mr-2"></i>{{user.address}}
+            </div>
+            <div class="h5 mt-4">
+              <i class="ni business_briefcase-24 mr-2"></i>{{role}}
+            </div>
+            <div>
+              <i class="ni education_hat mr-2"></i>{{user.school}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-8 order-xl-1">
+      <div class="card bg-secondary shadow">
+        <div class="card-header bg-white border-0">
+          <div class="row align-items-center">
+            <div class="col-8">
+              <h3 class="mb-0">Profile</h3>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="alert alert-danger" [hidden]="!error.name">
+            {{ error.name }}
+          </div>
+          <div class="alert alert-danger" [hidden]="!error.email">
+            {{ error.email }}
+          </div>
+          <form #userForm=ngForm>
+            <h6 class="heading-small text-muted mb-4">User information</h6>
+            <div class="pl-lg-4">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">Email address</label>
+                    <input type="email" name="email" id="input-email" class="form-control form-control-alternative" placeholder="Enter Email" value="{{user.email}}" required [(ngModel)]="user.email" [disabled]='!me'>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-created_at">Registered at</label>
+                    <input type="name" id="input-created_at" class="form-control form-control-alternative" placeholder="Select Registered Date" value="{{date}}" disabled>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-name">Name</label>
+                    <input type="text" name="name" id="input-name" class="form-control form-control-alternative" placeholder="Enter Name" value="{{user.name}}" [disabled]='!me' required [(ngModel)]="user.name">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr class="my-4" />
+            <!-- Address -->
+            <h6 class="heading-small text-muted mb-4">Contact information</h6>
+            <div class="pl-lg-4">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-address">Address</label>
+                    <input id="input-address" name="address" class="form-control form-control-alternative" placeholder="Enter Address" [disabled]='!me' [(ngModel)]="user.address" value="{{user.address}}" type="text" required>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr class="my-4" />
+            <!-- Description -->
+            <h6 class="heading-small text-muted mb-4">About me</h6>
+            <div class="pl-lg-4">
+              <div class="form-group">
+                <label>About Me</label>
+                <textarea rows="4" name="about" [disabled]='!me' class="form-control form-control-alternative" placeholder="Eneter Introduction about you..." [(ngModel)]="user.about">{{user.about}}</textarea>
+              </div>
+            </div>
+            <div class="float-right" *ngIf='me'>
+              <button type="submit" class="btn btn-info" [disabled]="!userForm.valid" (click)='submit()'>Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
