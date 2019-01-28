@@ -58,7 +58,7 @@ export class LocationComponent implements OnInit {
     this.pagination.max = data.total;
   }
 
-  //sort handler
+  //sort handler.
   sort(col){
     console.log(col);
     if(this.sortData.order=="asc" && this.sortData.col==col){
