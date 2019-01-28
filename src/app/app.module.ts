@@ -5,6 +5,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,6 +32,13 @@ import { ApiService } from './services/api.service';
 import { BeforeloginService } from './services/beforelogin.service';
 import { DataService } from './services/data.service';
 import { ClassComponent } from './components/class/class.component';
+import { SchoolFeesComponent } from './components/school-fees/school-fees.component';
+import { SubjectsComponent } from './components/subjects/subjects.component';
+import { MaterialsComponent } from './components/materials/materials.component';
+import { ResultsComponent } from './components/results/results.component';
+import { TimeTableComponent } from './components/time-table/time-table.component';
+import { PaymentsComponent } from './components/payments/payments.component';
+import { NoticeComponent } from './components/notice/notice.component';
 
 
 
@@ -51,7 +61,14 @@ import { ClassComponent } from './components/class/class.component';
     LocationComponent,
     SliderComponent,
     ProfileComponent,
-    ClassComponent
+    ClassComponent,
+    SchoolFeesComponent,
+    SubjectsComponent,
+    MaterialsComponent,
+    ResultsComponent,
+    TimeTableComponent,
+    PaymentsComponent,
+    NoticeComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +77,12 @@ import { ClassComponent } from './components/class/class.component';
     HttpClientModule,
     FormsModule,
     NgbModule,
-    ChartsModule
+    ChartsModule,
+    BrowserAnimationsModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory
+    })
   ],
   providers: [
     ApiService,
@@ -71,7 +93,7 @@ import { ClassComponent } from './components/class/class.component';
     DataService,
     SliderComponent
   ],
-  
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

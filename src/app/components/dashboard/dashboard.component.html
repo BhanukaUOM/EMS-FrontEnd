@@ -5,7 +5,7 @@
         <!-- Card stats -->
         <div class="row pt-5" *ngIf="isAdmin || isTeacher">
           <div class="col-xl-3 col-md-6">
-            <div class="card card-stats mb-4 mb-xl-0">
+            <div class="card card-stats shadow mb-4 mb-xl-0">
               <div class="card-body">
                 <div class="row">
                   <div class="col">
@@ -25,7 +25,7 @@
             </div>
           </div>
           <div class="col-xl-3 col-md-6">
-            <div class="card card-stats mb-4 mb-xl-0">
+            <div class="card card-stats shadow mb-4 mb-xl-0">
               <div class="card-body">
                 <div class="row">
                   <div class="col">
@@ -45,7 +45,7 @@
             </div>
           </div>
           <div class="col-xl-3 col-md-6">
-            <div class="card card-stats mb-4 mb-xl-0">
+            <div class="card card-stats shadow mb-4 mb-xl-0">
               <div class="card-body">
                 <div class="row">
                   <div class="col">
@@ -65,29 +65,29 @@
             </div>
           </div>
           <div class="col-xl-3 col-md-6">
-            <div class="card card-stats mb-4 mb-xl-0">
-              <div class="card-body">
-                <div class="row">
-                  <div class="col">
-                    <h5 class="card-title text-uppercase text-muted mb-0">School Fees</h5>
-                    <span class="h2 font-weight-bold mb-0">350,897</span>
-                  </div>
-                  <div class="col-auto">
-                    <div class="icon icon-shape bg-info text-white rounded-circle shadow">
-                      <i class="fas fa-wallet"></i>
+              <div class="card card-stats shadow mb-4 mb-xl-0">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h5 class="card-title text-uppercase text-muted mb-0">Classes</h5>
+                      <span class="h2 font-weight-bold mb-0">350,897</span>
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon icon-shape bg-info text-white rounded-circle shadow">
+                        <i class="fas fa-users"></i>
+                      </div>
                     </div>
                   </div>
+                  <p class="mt-3 mb-0 text-muted text-sm">
+                    <a [routerLink]="['/classes']"><span class="text-warning mr-2"><i class="fa fa-arrow-right"></i> View</span></a>
+                  </p>
                 </div>
-                <p class="mt-3 mb-0 text-muted text-sm">
-                  <a [routerLink]="['/fees']"><span class="text-warning mr-2"><i class="fa fa-arrow-right"></i> View</span></a>
-                </p>
               </div>
             </div>
-          </div>
         </div>
         <div class="row pt-5">
-          <div class="col-xl-3 col-md-6">
-            <div class="card card-stats mb-4 mb-xl-0">
+          <div class="col-xl-3 col-md-6" *ngIf="!isParentorStudent">
+            <div class="card card-stats shadow mb-4 mb-xl-0">
               <div class="card-body">
                 <div class="row">
                   <div class="col">
@@ -106,8 +106,28 @@
               </div>
             </div>
           </div>
+          <div class="col-xl-3 col-md-6" *ngIf="isParentorStudent">
+              <div class="card card-stats shadow mb-4 mb-xl-0">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h5 class="card-title text-uppercase text-muted mb-0">Materials</h5>
+                      <span class="h2 font-weight-bold mb-0">350,897</span>
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
+                        <i class="fas fa-book"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="mt-3 mb-0 text-muted text-sm">
+                    <a [routerLink]="['/materials']"><span class="text-warning mr-2"><i class="fa fa-arrow-right"></i> View</span></a>
+                  </p>
+                </div>
+              </div>
+            </div>
           <div class="col-xl-3 col-md-6">
-            <div class="card card-stats mb-4 mb-xl-0">
+            <div class="card card-stats shadow mb-4 mb-xl-0">
               <div class="card-body">
                 <div class="row">
                   <div class="col">
@@ -127,27 +147,27 @@
             </div>
           </div>
           <div class="col-xl-3 col-md-6">
-            <div class="card card-stats mb-4 mb-xl-0">
-              <div class="card-body">
-                <div class="row">
-                  <div class="col">
-                    <h5 class="card-title text-uppercase text-muted mb-0">Classes</h5>
-                    <span class="h2 font-weight-bold mb-0">350,897</span>
-                  </div>
-                  <div class="col-auto">
-                    <div class="icon icon-shape bg-info text-white rounded-circle shadow">
-                      <i class="fas fa-users"></i>
+              <div class="card card-stats shadow mb-4 mb-xl-0">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h5 class="card-title text-uppercase text-muted mb-0">School Fees</h5>
+                      <span class="h2 font-weight-bold mb-0">350,897</span>
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon icon-shape bg-info text-white rounded-circle shadow">
+                        <i class="fas fa-wallet"></i>
+                      </div>
                     </div>
                   </div>
+                  <p class="mt-3 mb-0 text-muted text-sm">
+                    <a [routerLink]="['/payments']"><span class="text-warning mr-2"><i class="fa fa-arrow-right"></i> View</span></a>
+                  </p>
                 </div>
-                <p class="mt-3 mb-0 text-muted text-sm">
-                  <a [routerLink]="['/classes']"><span class="text-warning mr-2"><i class="fa fa-arrow-right"></i> View</span></a>
-                </p>
               </div>
             </div>
-          </div>
           <div class="col-xl-3 col-md-6">
-            <div class="card card-stats mb-4 mb-xl-0">
+            <div class="card card-stats shadow mb-4 mb-xl-0">
               <div class="card-body">
                 <div class="row">
                   <div class="col">
@@ -169,7 +189,7 @@
         </div>
         <div class="row pt-5">
           <div class="col-xl-3 col-md-6">
-            <div class="card card-stats mb-4 mb-xl-0">
+            <div class="card card-stats shadow mb-4 mb-xl-0">
               <div class="card-body">
                 <div class="row">
                   <div class="col">
@@ -189,7 +209,7 @@
             </div>
           </div>
           <div class="col-xl-3 col-md-6">
-            <div class="card card-stats mb-4 mb-xl-0">
+            <div class="card card-stats shadow mb-4 mb-xl-0">
               <div class="card-body">
                 <div class="row">
                   <div class="col">
@@ -209,7 +229,7 @@
             </div>
           </div>
           <div class="col-xl-3 col-md-6">
-            <div class="card card-stats mb-4 mb-xl-0">
+            <div class="card card-stats shadow mb-4 mb-xl-0">
               <div class="card-body">
                 <div class="row">
                   <div class="col">
@@ -228,8 +248,8 @@
               </div>
             </div>
           </div>
-          <div class="col-xl-3 col-md-6">
-            <div class="card card-stats mb-4 mb-xl-0">
+          <div class="col-xl-3 col-md-6" *ngIf="isParent">
+            <div class="card card-stats shadow mb-4 mb-xl-0">
               <div class="card-body">
                 <div class="row">
                   <div class="col">
@@ -282,18 +302,17 @@
           </div>
         </div>
         <div class="card-body">
-          <!-- Chart -->
-          <div class="chart">
-            <!-- Chart wrapper -->
-            <canvas id="chart-sales" class="chart-canvas"></canvas>
-            <!-- <canvas baseChart
-          [data]="pieChartData"
-          [labels]="pieChartLabels"
-          [chartType]="pieChartType"
-          [options]="pieChartOptions"
-          (chartHover)="chartHovered($event)"
-          (chartClick)="chartClicked($event)"></canvas> -->
-          </div>
+            <div>
+                <div style="display: block">
+                  <canvas baseChart
+                          [datasets]="barChartData"
+                          [labels]="barChartLabels"
+                          [options]="barChartOptions"
+                          [legend]="barChartLegend"
+                          [chartType]="barChartType">
+                  </canvas>
+                </div>
+              </div>
         </div>
       </div>
     </div>
