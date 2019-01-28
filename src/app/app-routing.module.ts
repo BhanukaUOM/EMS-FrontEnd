@@ -17,6 +17,15 @@ import { PermissionsComponent } from './components/permissions/permissions.compo
 import { AttendanceComponent } from './components/attendance/attendance.component';
 import { LocationMapComponent } from './components/location-map/location-map.component';
 import { LocationComponent } from './components/location/location.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { ClassComponent } from './components/class/class.component';
+import { SchoolFeesComponent } from './components/school-fees/school-fees.component';
+import { SubjectsComponent } from './components/subjects/subjects.component';
+import { MaterialsComponent } from './components/materials/materials.component';
+import { ResultsComponent } from './components/results/results.component';
+import { TimeTableComponent } from './components/time-table/time-table.component';
+import { PaymentsComponent } from './components/payments/payments.component';
+import { NoticeComponent } from './components/notice/notice.component';
 
 const appRoutes: Routes = [
   {
@@ -25,8 +34,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'login',
-    component: LoginComponent,
-    canActivate : [BeforeloginService]
+    component: LoginComponent
   },
   {
     path: 'dashboard',
@@ -80,6 +88,51 @@ const appRoutes: Routes = [
   {
     path: 'locationMap',
     component: LocationMapComponent,
+    canActivate : [AfterloginService]
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    canActivate : [AfterloginService]
+  },
+  {
+    path: 'class',
+    component: ClassComponent,
+    canActivate : [AfterloginService]
+  },
+  {
+    path: 'fees',
+    component: SchoolFeesComponent,
+    canActivate : [AfterloginService]
+  },
+  {
+    path: 'subjects',
+    component: SubjectsComponent,
+    canActivate : [AfterloginService]
+  },
+  {
+    path: 'materials',
+    component: MaterialsComponent,
+    canActivate : [AfterloginService]
+  },
+  {
+    path: 'results',
+    component: ResultsComponent,
+    canActivate : [AfterloginService]
+  },
+  {
+    path: 'timetables',
+    component: TimeTableComponent,
+    canActivate : [AfterloginService]
+  },
+  {
+    path: 'payments',
+    component: PaymentsComponent,
+    canActivate : [AfterloginService]
+  },
+  {
+    path: 'notices',
+    component: NoticeComponent,
     canActivate : [AfterloginService]
   }
 ];
